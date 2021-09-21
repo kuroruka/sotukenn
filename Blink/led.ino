@@ -27,8 +27,7 @@ void setup()
 }
 
 void loop()
-{
-  
+{ 
   Blynk.run();
   Serial.print(Flag);
   Serial.print("\n");
