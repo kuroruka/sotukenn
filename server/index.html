@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>サイトタイトル</title>
+    <meta name="description" content="ディスクリプションを入力">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <a id="light" class=mode>LIGHT PATTERN</a>
+    <div id="button1" class="box" onclick="clickDisplayAlert(1)">1</div>
+    <div id="button2" class="box" onclick="clickDisplayAlert(2)">2</div>
+    <div id="button3" class="box" onclick="clickDisplayAlert(3)">3</div>
+    <div id="button4" class="box" onclick="clickDisplayAlert(4)">4</div>
+    <div id="button5" class="box" onclick="clickDisplayAlert(5)">5</div>
+    <div id="button6" class="box" onclick="clickDisplayAlert(6)">6</div>
+
+    <a id="penlight" class=mode>PENLIGHT PATTERN</a>
+
+    <div id="button7" class="box" onclick="clickDisplayAlert(7)">1</div>
+    <div id="button8" class="box" onclick="clickDisplayAlert(8)">2</div>
+    <div id="button9" class="box" onclick="clickDisplayAlert(9)">3</div>
+    <div id="button10" class="box" onclick="clickDisplayAlert(10)">4</div>
+    <div id="button11" class="box" onclick="clickDisplayAlert(11)">5</div>
+    <div id="button12" class="box" onclick="clickDisplayAlert(12)">6</div>
+
+    <div id="button13" class="box" onclick="clickDisplayAlert(13)">next</div>
+
+
+
+    <script>
+
+
+function Ajax(value,path){
+    
+    
+    
+    var data =  {
+        'function': value,
+        'sec': 1,
+        'interval': 0.1 * 100000,
+        'r': 255,
+        'g': 255,
+        'b': 255
+
+    };
+
+
+    console.log(data);
+    $.ajax({
+        type: 'POST', //　POSTかGET  
+        url: path, //　送り先
+        data: {
+            'data': data
+        }, //　渡したいデータ
+        dataType: 'json', //　データ形式を指定
+        scriptCharset: 'UTF-8' //　文字コードを指定
+    })
+}
+
+
+        let scene_value = 0;
+
+        function clickDisplayAlert(num) {
+            if (num === 1) {
+                scene_value = 1;
+                console.log(scene_value);
+
+                Ajax(scene_value,'http://54.248.37.203/file_write/light/file_write_live2.php');
+
+            } else if (num === 2) {
+                scene_value = 2;
+                console.log(scene_value);
+
+                var data = {
+                    'function': scene_value,
+                    'sec': 1,
+                    'interval': 0.01 * 100000,
+                    'r': 255,
+                    'g': 255,
+                    'b': 255,
+                    'r2': 255,
+                    'g2': 255,
+                    'b2': 255,
+
+                };
+
+
+                console.log(data);
+                $.ajax({
+                    type: 'POST', //　POSTでも可  
+                    url: 'http://54.248.37.203/file_write/light/file_write_live2.php', //　送り先
+                    data: {
+                        'data': data
+                    }, //　渡したいデータ
+                    dataType: 'json', //　データ形式を指定
+                    scriptCharset: 'UTF-8' //　文字コードを指定
+                })
+            } else if (num === 3) {
+                scene_value = 3;
+                console.log(scene_value);
+
+                Ajax(scene_value,'http://54.248.37.203/file_write/light/file_write_live2.php');
+
+            } else if (num === 4) {
+                scene_value = 4;
+                console.log(scene_value);
+
+                Ajax(scene_value,'http://54.248.37.203/file_write/light/file_write_live2.php');
+
+            } else if (num === 5) {
+                scene_value = 5;
+                console.log(scene_value);
+
+                Ajax(scene_value,'http://54.248.37.203/file_write/light/file_write_live2.php');
+
+            } else if (num === 6) {
+                scene_value = 6;
+                console.log(scene_value);
+
+                Ajax(scene_value,'http://54.248.37.203/file_write/light/file_write_live2.php');
+
+            } else if (num === 7) {
+                scene_value = 7;
+                console.log(scene_value);
+            } else if (num === 8) {
+                scene_value = 8;
+                console.log(scene_value);
+            } else if (num === 9) {
+                scene_value = 9;
+                console.log(scene_value);
+            } else if (num === 10) {
+                scene_value = 10;
+                console.log(scene_value);
+            } else if (num === 11) {
+                scene_value = 11;
+                console.log(scene_value);
+            } else if (num === 12) {
+                scene_value = 12;
+                console.log(scene_value);
+            }
+
+
+            else if (num === 13) {
+                if (scene_value === 2) {
+
+                    $.ajax({
+                        type: 'POST', //　POSTでも可
+                        url: '/pattern/pattern_2/pattern_2.php', //　送り先
+                        data: {
+                            'data': scene_value
+                        }, //　渡したいデータ
+                        dataType: 'json', //　データ形式を指定
+                        scriptCharset: 'UTF-8' //　文字コードを指定
+                    })
+
+                    location.href = "/pattern/pattern_2/pattern_2.php";
+
+                } else if (scene_value > 6) {
+
+                    $.ajax({
+                        type: 'POST', //　POSTでも可
+                        url: '/pattern/pattern_3/pattern_3.php', //　送り先
+                        data: {
+                            'data': scene_value
+                        }, //　渡したいデータ
+                        dataType: 'json', //　データ形式を指定
+                        scriptCharset: 'UTF-8' //　文字コードを指定
+                    })
+
+                    location.href = "/pattern/pattern_3/pattern_3.php";
+
+
+
+                } else {
+                    $.ajax({
+                        type: 'POST', //　POSTでも可
+                        url: '/pattern/pattern_1/pattern_1.php', //　送り先
+                        data: {
+                            'data': scene_value
+                        }, //　渡したいデータ
+                        dataType: 'json', //　データ形式を指定
+                        scriptCharset: 'UTF-8' //　文字コードを指定
+                    })
+
+                    location.href = "/pattern/pattern_1/pattern_1.php";
+
+                }
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

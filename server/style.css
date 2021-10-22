@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Bellota+Text&display=swap');
+body {
+  margin: 0;
+  height: 100%;
+  background-color: #CCCCCC;
+  ;
+}
+
+.mode {
+  font-size: 5em;
+  color: #CCCCCC;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  text-shadow:-2px -2px 8px white, 2px 2px 8px rgba(0, 0, 0, 0.5);
+  
+}
+
+#light {
+  position: absolute;
+  top: 3vh;
+  left: 1vw;
+}
+
+#penlight {
+  position: absolute;
+  top: 43vh;
+  left: 1vw;
+}
+
+.box {
+  background-color: #CCCCCC;
+  border-radius: 0.5em;
+  box-shadow: -2px -2px 8px white, 2px 2px 8px rgba(0, 0, 0, 0.5);
+  color: #999999;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 2em;
+  padding: 0.7em 2em;
+  position: absolute;
+  /* top: 23vh; */
+  /* left: 10vw; */
+  text-decoration: none;
+  transform: translateX(-50%);
+  transition: all 0.2s ease;
+}
+
+.box:hover {
+  background-color: #666666;
+  transform: translate(-50%, 0.15em);
+  box-shadow: 0 0.15em 0 #222222;
+}
+
+.box:active {
+  box-shadow: 0 0 0 #7A5A7A;
+  transform: translate(-50%, 0.25em);
+}
+
+#button1 {
+  position: absolute;
+  top: 23vh;
+  left: 10vw;
+}
+
+#button2 {
+  position: absolute;
+  top: 23vh;
+  left: 25vw;
+}
+
+#button3 {
+  position: absolute;
+  top: 23vh;
+  left: 40vw;
+}
+
+#button4 {
+  position: absolute;
+  top: 23vh;
+  left: 55vw;
+}
+
+#button5 {
+  position: absolute;
+  top: 23vh;
+  left: 70vw;
+}
+
+#button6 {
+  position: absolute;
+  top: 23vh;
+  left: 85vw;
+}
+
+#button7 {
+  position: absolute;
+  top: 63vh;
+  left: 10vw;
+}
+
+#button8 {
+  position: absolute;
+  top: 63vh;
+  left: 25vw;
+}
+
+#button9 {
+  position: absolute;
+  top: 63vh;
+  left: 40vw;
+}
+
+#button10 {
+  position: absolute;
+  top: 63vh;
+  left: 55vw;
+}
+
+#button11 {
+  position: absolute;
+  top: 63vh;
+  left: 70vw;
+}
+
+#button12 {
+  position: absolute;
+  top: 63vh;
+  left: 85vw;
+}
+
+#button13 {
+  position: absolute;
+  top: 85vh;
+  left: 85vw;
+}

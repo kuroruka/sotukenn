@@ -1,0 +1,18 @@
+<html>
+
+<body>
+    <button id="connect">Connect!</button>
+</body>
+
+<script>
+    const button = document.getElementById("connect");
+
+    button.addEventListener("click", async () => {
+        if ("serial" in navigator) {
+            console.log('こんにちわ');
+            const port = await navigator.serial.requestPort();
+        }
+    });
+</script>
+
+</html>
